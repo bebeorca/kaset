@@ -9,8 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-    body{font-family: 'Poppins', sans-serif;}
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
     
+        .porsi:disabled {
+            background-color: transparent;
+            border: none;
+        }
+
     </style>
     <title>Pesanan</title>
 </head>
@@ -18,7 +26,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-danger">
     <div class="container-fluid px-5">
         <a class="navbar-brand" href="/">
-            <img width="128" src="" alt="Logo KaSeT">
+            <img width="128" src="/img/hitam.png" alt="Logo KaSeT">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -51,7 +59,7 @@
         @endif
     </div>
 
-    <div class="container" style="margin-top: 100px;">
+    <div class="container mb-5" style="margin-top: 100px;">
         <div class="row gy-4">
             @foreach ($menus as $menu)
             <div class="col-lg-4 col-md-6 col-12">
@@ -122,7 +130,15 @@
                 @endforeach
                 @foreach ($myPesanan as $item)
                     <div class="col-lg-4 col-md-6 col-12">
-                        <div class="card" style="border-radius: 0px 0px 20px 20px;">
+                        <div class="card position-relative" style="border-radius: 0px 0px 20px 20px;">
+                            <!-- <a href="#" class="position-absolute top-0 end-0"><i class="bi bi--circle-fill"></i>a</a> -->
+                            @if ($item->status == '3' || $item->status == '4')
+                                <form action="/dashboard/orderan/delete-finish-user/{{ $item->id }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{ $item->id }}">
+                                    <button class="position-absolute translate-middle top-0 start-100" onclick="return confirm('Hapus data pesanan?')" style="border: none; background-color: transparent;"><i class="bi bi-x-circle-fill fs-3 text-danger"></i></button>
+                                </form>
+                            @endif
                             @if ($item->gambar)
                                 <img class="w-100" src="{{ asset("storage/" . $item->gambar) }}" height="200px" alt="">
                                 <input type="hidden" name="gambar" value="{{ $item->gambar }}">
@@ -142,7 +158,7 @@
                                 </div>
                             </div>
                             @if ($item->status == '0')
-                                <div class="container card-footer py-3 bg-primary" style="background-color: gray; border-radius: 0px 0px 20px 20px;">
+                                <div class="container card-footer py-3" style="background-color: gray; border-radius: 0px 0px 20px 20px;">
                                     <p class="text-center text-light mb-2" style="position: relative; top: 20px;">Tunggu konfirmasi dari kantin, ya</p>
                                     <div class="row gx-2 invisible">
                                         <div class="col order-0">
@@ -158,7 +174,7 @@
                                     </div>
                                 </div>
                             @elseif($item->status == '1')
-                                <div class="container card-footer py-3" style="background-color: rgb(212, 198, 0); border-radius: 0px 0px 20px 20px;">
+                                <div class="container card-footer py-3" style="background-color: rgb(255, 81, 0); border-radius: 0px 0px 20px 20px;">
                                     <p class="text-center text-light mb-2" style="position: relative; top: 20px;">Pesananmu sedang disiapkan</p>
                                     <div class="row gx-2 invisible">
                                         <div class="col order-0">
@@ -190,8 +206,24 @@
                                     </div>
                                 </div>
                             @elseif($item->status == '3')
+                                <div class="container card-footer py-3 bg-primary" style="background-color: gray; border-radius: 0px 0px 20px 20px;">
+                                    <p class="text-center text-light mb-2" style="position: relative; top: 20px;">Selesai</p>
+                                    <div class="row gx-2 invisible">
+                                        <div class="col order-0">
+                                            <form action="">
+                                                <button type="submit" class="btn btn-danger w-100">Batalkan</button>
+                                            </form>
+                                        </div>
+                                        <div class="col order-1">
+                                            <form action="">
+                                                <button type="submit" class="btn btn-success w-100">Konfirmasi</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            @elseif($item->status == '4')
                                 <div class="container card-footer py-3 bg-danger" style="background-color: gray; border-radius: 0px 0px 20px 20px;">
-                                    <p class="text-center text-light mb-2" style="position: relative; top: 20px;">Yaa, pesananmu gak akan di proses</p>
+                                    <p class="text-center text-light mb-2" style="position: relative; top: 20px;">Yaa, pesananmu tidak dikonfirmasi</p>
                                     <div class="row gx-2 invisible">
                                         <div class="col order-0">
                                             <form action="">

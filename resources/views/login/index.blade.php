@@ -17,9 +17,9 @@
 </head>
 <body>
     <div class="container">
-        <div class="row mb-5">
+        <div class="row mt-4 mb-5">
             <div class="col text-center">
-                <img class="img-fluid w-25 mt-5" src="https://dev.telkomschools.sch.id/wp-content/uploads/2021/06/ts-logo-2.png" alt="Logo KaSeT">
+                <img class="img-fluid w-25" src="/img/hitam.png" alt="Logo KaSeT">
             </div>
         </div>
 <!--        <div class="row d-none d-md-block">-->
@@ -45,10 +45,7 @@
         @endif
 
         <div class="row align-items-center justify-content-around">
-            <div class="col-lg-5 d-none d-lg-block text-center">
-                <img src="https://whatifgaming.com/wp-content/uploads/2021/11/Cool-Luffy-PFP.jpg" alt="Poster Promosi" class="img-fluid">
-            </div>
-            <div class="col col-lg-5">
+            <div class="col-12 col-md-8 col-lg-6">
                 <form action="/login" method="post">
                     @csrf
                     <div class="container pt-4 border shadow-sm" style="border-radius: 20px">
@@ -60,7 +57,7 @@
                                 <a href="/register" class="text-danger text-decoration-none fw-bolder">Daftar</a>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mt-3">
                             <div class="col">
                                 <label for="username" class="form-label">Nama pengguna</label>
                                 <input required class="form-control @error('username') is-invalid @enderror" type="text" name="username" id="username" autofocus>
@@ -82,12 +79,7 @@
                                 @enderror
                             </div>
                         </div>
-                        {{-- <div class="row">
-                            <div class="col mt-2">
-                                <a href="https://wa.me/6282193895552" class="text-danger fw-bolder text-decoration-none">Lupa kata sandi?</a>
-                            </div>
-                        </div> --}}
-                        <div class="row">
+                        <div class="row mt-4">
                             <div class="col">
                                 <button type="submit" class="btn btn-danger text-light w-100 my-4">Login</button>
                             </div>

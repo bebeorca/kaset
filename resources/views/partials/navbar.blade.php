@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-5">
             <a class="navbar-brand" href="#">
-                <img width="128" src="https://dev.telkomschools.sch.id/wp-content/uploads/2021/06/ts-logo-2.png" alt="Logo KaSeT">
+                <img width="128" src="/img/putih.png" alt="Logo KaSeT">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -47,7 +47,7 @@
 
                                 @if (auth()->user()->user_id === '2')
                                     <li>
-                                        <a href="/dashboard" class="dropdown-item">
+                                        <a href="/dashboard/orderan" class="dropdown-item">
                                             <i class="bi bi-layout-text-window-reverse"></i> Dashboard
                                         </a>
                                     </li>
@@ -77,7 +77,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-5">
             <a class="navbar-brand" href="#">
-                <img width="128" src="https://dev.telkomschools.sch.id/wp-content/uploads/2021/06/ts-logo-2.png" alt="Logo KaSeT">
+                <img width="128" src="/img/putih.png" alt="Logo KaSeT">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

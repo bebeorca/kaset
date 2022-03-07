@@ -31,7 +31,7 @@
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $menu->nama_menu }}</td>
-                    <td>{{ $menu->harga }}</td>
+                    <td>{{ $menu->harga / 1000 . "K" }}</td>
                     <td>{{ $menu->deskripsi }}</td>
                     <td>
                       @if ($menu->kategori == '1')

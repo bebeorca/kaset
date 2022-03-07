@@ -22,13 +22,13 @@
                 <a href="/#menu" class="text-decoration-none fs-2 link-danger fw-bold"><i class="bi bi-arrow-bar-left text-dark"></i> Kembali</a>
             </div>
         </div>
-        <div class="row gx-0 justify-content-center mt-4">
+        <div class="row gx-0 justify-content-center mt-4 mb-5">
             <div class="col col-md-auto text-center mt-3"><a class="text-decoration-none fs-5 link-danger fw-bold pilihan-menu px-3 py-2 {{ $act == 'semua' ? 'link-light bg-danger' : '' }}" style="border-radius: 20px;" id="pilihan-menu1" href="/menus">Semua</a></div>
             <div class="col col-md-auto text-center mt-3"><a class="text-decoration-none fs-5 link-danger fw-bold pilihan-menu px-3 py-2 {{ $act == 'makanan' ? 'link-light bg-danger' : '' }}" style="border-radius: 20px;" id="pilihan-menu2" href="/menus/makanan">Makanan</a></div>
             <div class="col col-md-auto text-center mt-3"><a class="text-decoration-none fs-5 link-danger fw-bold pilihan-menu px-3 py-2 {{ $act == 'minuman' ? 'link-light bg-danger' : '' }}" style="border-radius: 20px;" id="pilihan-menu3" href="/menus/minuman">Minuman</a></div>
             <div class="col col-md-auto text-center mt-3"><a class="text-decoration-none fs-5 link-danger fw-bold pilihan-menu px-3 py-2 {{ $act == 'snack' ? 'link-light bg-danger' : '' }}" style="border-radius: 20px;" id="pilihan-menu4" href="/menus/snack">Snack</a></div>
         </div>
-        <div class="row mt-5">
+        <div class="row">
             @foreach ($menus as $menu)
                 <div class="col-12 col-md-6 col-lg-4 mb-5">
                     <div class="card" style="border-radius: 20px;">
@@ -36,7 +36,7 @@
                         @if ($menu->gambar)
                             <div class="card" style="height: 200px; background-image: url('{{ asset("storage/" . $menu->gambar) }}'); background-size: cover; background-repeat: no-repeat; background-position: center; border-radius: 20px 20px 0px 0px;"></div>
                         @else 
-                            <div class="card" style="height: 200px; background-image: url('https://dev.telkomschools.sch.id/wp-content/uploads/2021/06/ts-logo-2.png'); background-size: cover; background-repeat: no-repeat; background-position: center; border-radius: 20px 20px 0px 0px;"></div>
+                            <div class="card" style="height: 200px; background-image: url('{{ asset("/img/merah.png") }}'); background-size: cover; background-repeat: no-repeat; background-position: center; border-radius: 20px 20px 0px 0px; background-size:80%;"></div>
                         @endif
                         <div class="card-body bg-danger text-light px-4 py-4 d-flex flex-column" style="margin-top: -20px; border-radius: 0 0 20px 20px">
                             <h5 class="card-title mt-2">{{ $menu->nama_menu }}</h5>

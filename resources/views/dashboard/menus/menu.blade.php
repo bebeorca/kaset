@@ -3,7 +3,7 @@
 @section('container')
 
     <h1>{{ $menu->nama_menu }}</h1>
-    <h3>{{ $menu->harga }}</h3>
+    <h3>{{ $menu->harga / 1000 . "K"}}</h3>
     
     @if ($menu->kategori == '1')
         <h3>Makanan</h3>
@@ -17,7 +17,7 @@
     @if ($menu->gambar)
         <img src="{{ asset("storage/" . $menu->gambar) }}" class="gambar-preview img-fluid mb-3 col-sm-5 d-block w-25">  
     @else
-        <img src="https://dev.telkomschools.sch.id/wp-content/uploads/2021/06/ts-logo-2.png" class="gambar-preview img-fluid mb-3 col-sm-5 d-block w-25">  
+        <img src="/img/merah.png" class="gambar-preview img-fluid mb-3 col-sm-5 d-block w-25">  
     @endif
 
     <div class="mt-5">

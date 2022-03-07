@@ -30,7 +30,7 @@
                 @if ($menu->gambar)
                     <div class="card" style="height: 200px; background-image: url('{{ asset("storage/" . $menu->gambar) }}'); background-size: cover; background-repeat: no-repeat; background-position: center; border-radius: 20px 20px 0px 0px;"></div>
                 @else 
-                    <div class="card" style="height: 200px; background-image: url('https://dev.telkomschools.sch.id/wp-content/uploads/2021/06/ts-logo-2.png'); background-size: cover; background-repeat: no-repeat; background-position: center; border-radius: 20px 20px 0px 0px;"></div>
+                    <div class="card" style="height: 200px; background-image: url('{{ asset('/img/merah.png') }}'); background-size: cover; background-repeat: no-repeat; background-position: center; border-radius: 20px 20px 0px 0px; background-size:80%;"></div>
                 @endif
                 <div class="card-body bg-danger text-light px-4 py-4 d-flex flex-column" style="margin-top: -20px; border-radius: 0 0 20px 20px">
                     <h5 class="card-title mt-2">{{ $menu->nama_menu }}</h5>

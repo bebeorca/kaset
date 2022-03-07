@@ -27,7 +27,7 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col text-center">
-                <img class="img-fluid w-25 mt-5" src="https://dev.telkomschools.sch.id/wp-content/uploads/2021/06/ts-logo-2.png" alt="Logo KaSeT">
+                <img class="img-fluid w-25" src="/img/hitam.png" alt="Logo KaSeT">
             </div>
         </div>
         <form action="/register" method="post">

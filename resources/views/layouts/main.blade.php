@@ -95,9 +95,7 @@
                                 <p class="fw-bold fs-1 text-light">Follow IG Kami Di</p>
                             </div>
                             <div class="col">
-                                <form action="https://www.instagram.com/" target="_blank">
-                                    <button type="submit" class="btn btn-light text-dark py-1 px-3"><i class="bi bi-instagram"></i> lorem</button>
-                                </form>
+                                <a class="btn btn-light text-dark" href="https://www.instagram.com/kasetmks/" target="_blank"><i class="bi bi-instagram"></i> kasetmks</a>
                             </div>
                         </div>
                     </div>

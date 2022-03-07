@@ -200,15 +200,20 @@ Route::post('/dashboard/orderan/confirm/{pesanan:nama_kantin}',[PesananControlle
 
 Route::post('/dashboard/orderan/delete/{pesanan:nama_kantin}', [PesananController::class, 'deletePesanan']);
 
+Route::post('/dashboard/orderan/delete-finish-user/{pesanan:id}',function(PesananAdmin $pesanan){
+    PesananAdmin::destroy($pesanan->id);
+    return redirect('/pesanan');
+});
+
 //end pesanan
 
 
 //admin middleware
 Route::group(["middleware" => ["auth", "isAdmin:2"]], function (){
     
-    Route::get('/dashboard', function (){
-        return view('dashboard/index');
-    });
+    // Route::get('/dashboard', function (){
+    //     return view('dashboard/index');
+    // });
     
     Route::resource('/dashboard/menus', DashboardMenusController::class);
     
@@ -274,7 +279,19 @@ Route::group(["middleware" => ["auth", "isAdmin:2"]], function (){
         ]);
     });
 
+    Route::get('/dashboard/orderan-selesai', function (){
+        return view('/dashboard/orderan/orderanSelesai/index', [
+            "title" => "Orderan",
+            "pesanan" => PesananAdmin::where('kantin_id', auth()->user()->id)->get()
+        ]);
+    });
+
     Route::post('/dashboard/orderan/set-status/{pesanan:id}',[PesananController::class, 'setOrderanStatus']);
+
+    Route::post('/dashboard/orderan/delete-finish/{pesanan:id}',function(PesananAdmin $pesanan){
+        PesananAdmin::destroy($pesanan->id);
+        return redirect('/dashboard/orderan-selesai');
+    });
 
 });
 //end admin middlewarw

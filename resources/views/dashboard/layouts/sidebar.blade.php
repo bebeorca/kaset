@@ -2,9 +2,15 @@
     <div class="position-sticky pt-3">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" aria-current="page" href="/dashboard">
-            <span data-feather="home"></span>
-            Dashboard
+          <a class="nav-link {{ Request::is('dashboard/orderan') ? 'active' : '' }}" href="/dashboard/orderan">
+            <span data-feather="shopping-cart"></span>
+            Orderan Masuk
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('dashboard/orderan-selesai') ? 'active' : '' }}" href="/dashboard/orderan-selesai">
+            <span data-feather="check"></span>
+            Orderan Selesai
           </a>
         </li>
         <li class="nav-item">
@@ -12,12 +18,6 @@
               <span data-feather="clipboard"></span>
               Menu
             </a>
-          </li>
-        <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard/orderan') ? 'active' : '' }}" href="/dashboard/orderan">
-            <span data-feather="shopping-cart"></span>
-            Orderan
-          </a>
         </li>
       </ul>
     </div>

@@ -76,7 +76,7 @@
               @if ($menu->gambar)
                 <img src="{{ asset("storage/" . $menu->gambar) }}" class="gambar-preview img-fluid mb-3 col-sm-5 d-block w-25">  
               @else
-                <img src="https://dev.telkomschools.sch.id/wp-content/uploads/2021/06/ts-logo-2.png" class="gambar-preview img-fluid mb-3 col-sm-5 d-block w-25">  
+                <img src="/img/merah.png" class="gambar-preview img-fluid mb-3 col-sm-5 d-block w-25">  
               @endif
               <input class="form-control" type="file" id="gambar" name="gambar" @error('gambar') is-invalid @enderror onchange="previewGambar()">
               @error('gambar')
