@@ -82,11 +82,11 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="col mt-2">
                                 <a href="https://wa.me/6282193895552" class="text-danger fw-bolder text-decoration-none">Lupa kata sandi?</a>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="row">
                             <div class="col">
                                 <button type="submit" class="btn btn-danger text-light w-100 my-4">Login</button>
@@ -97,7 +97,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col text-center mt-5">
+            <div class="row" style="position: absolute; text-align: center; bottom: 5%; left: 0px; width: 100%">
                 <p>&copy; 2022, MetroChild | <a href="#" class="text-danger text-decoration-none">Kantin Sekolah Telkom</a></p>
             </div>
         </div>

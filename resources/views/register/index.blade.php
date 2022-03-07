@@ -43,6 +43,9 @@
                      <p class="text-danger text-center fs-2 border-bottom border-4 border-danger mt-3" style="font-weight: bolder;">Data Diri Anda</p>
                  </div>
                  <div class="w-100"></div>
+                 <input type="hidden" name="user_id" class="form-control" id="user_id" value="1">
+                 <input type="hidden" name="nama_kantin" class="form-control" id="nama_kantin" value="--">
+                 <input type="hidden" name="nama_pemilik" class="form-control" id="nama_pemilik" value="--">
                 <div class="col">
                     <label for="nama_lengkap" class="form-label">Nama Lengkap <sup><i class="bi bi-asterisk text-danger"></i></sup></label>
                     <input required type="text" name="nama_lengkap" class="form-control @error('nama_lengkap') is-invalid @enderror" id="nama_lengkap" placeholder="Nama Lengkap" value="{{ old('nama_lengkap') }}" autofocus>
@@ -53,15 +56,6 @@
                     @enderror
                 </div>
                 <div class="w-100"></div>
-                <div class="col">
-                    <label for="nama_panggilan" class="form-label">Nama Panggilan <sup><i class="bi bi-asterisk text-danger"></i></sup></label>
-                    <input required type="text" class="form-control @error('nama_panggilan') is-invalid @enderror" name="nama_panggilan" id="nama_panggilan" placeholder="Nama Panggilan" value="{{ old('nama_panggilan') }}">
-                    @error('nama_panggilan')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
                 <div class="col">
                     <label for="nis" class="form-label">NIS <sup><i class="bi bi-asterisk text-danger"></i></sup></label>
                     <input required type="text" class="form-control @error('nis') is-invalid @enderror" name="nis" id="nis" placeholder="NIS" value="{{ old('nis') }}">

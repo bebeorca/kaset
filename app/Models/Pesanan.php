@@ -5,18 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\User;
-
-class Menus extends Model
+class Pesanan extends Model
 {
     use HasFactory;
 
     protected $guarded = [
         'id'
     ];
-
-    public function kantin(){
-        return $this->belongsTo(User::class);
-    }
-
 }

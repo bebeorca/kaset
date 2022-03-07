@@ -33,73 +33,85 @@
             </div>
         </div>
 
-        @yield('cardContainer')
+        <div class="container mt-3" id="menu">
+            @yield('cardContainer')
+        </div>
         
     </div>
     <!-- Akhir Menu Semua Makanan Minuman Snack --> 
 
     <!-- Tentang Kami About us -->
-    <div class="container-fluid bg-secondary py-5 mt-5">
-        <div class="row">
-            <div class="col">
-                <p class="fw-bolder fs-1 text-light text-center">Tentang Kami</p>
+    <br id="tentang_kami">
+    @auth
+    
+    @else
+        <div class="container-fluid bg-secondary py-5 mt-4">
+            <div class="row">
+                <div class="col">
+                    <p class="fw-bolder fs-1 text-light text-center">Tentang Kami</p>
+                </div>
+            </div>
+            <div class="row justify-content-center px-4">
+                <div class="col-lg-6 d-none d-lg-block text-center">
+                    <img src="https://blogpictures.99.co/makanan-khas-indonesia-header.png" alt="Gambar Kami" class="img-fluid">
+                </div>
+                <div class="col pe-5">
+                    <p class="fs-2 fw-bolder text-light d-none d-lg-block">Siapa Kami?</p>
+                    <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam distinctio error harum iste iusto laborum nam, necessitatibus nisi non odit omnis possimus praesentium repellendus tempora voluptatibus! Assumenda distinctio molestias saepe!</p>
+                    <p class="text-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima ratione, minus culpa numquam, esse voluptatum magni nemo beatae non mollitia sunt exercitationem? Iusto eos magni repellat eaque praesentium sequi beatae.</p>
+                </div>
             </div>
         </div>
-        <div class="row justify-content-center align-items-center">
-            <div class="col-lg-6 d-none d-lg-block text-center">
-                <img src="https://blogpictures.99.co/makanan-khas-indonesia-header.png" alt="Gambar Kami" class="img-fluid">
+        <!-- Akhir Tentang kami About us -->
+        <!-- Didukung oleh Supported by -->
+        <div class="container-fluid py-5 px-4">
+            <div class="row">
+                <div class="col">
+                    <p class="fw-bolder fs-1 text-danger text-center">Didukung oleh</p>
+                </div>
             </div>
-            <div class="col pe-5">
-                <p class="fs-2 fw-bolder text-light d-none d-lg-block">Siapa Kami?</p>
-                <br>
-                <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam distinctio error harum iste iusto laborum nam, necessitatibus nisi non odit omnis possimus praesentium repellendus tempora voluptatibus! Assumenda distinctio molestias saepe!</p>
-                <hr class="text-light">
-                <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A at delectus eos. Exercitationem, incidunt, reiciendis! Eligendi hic, neque optio quisquam sed similique tenetur voluptatibus. Dignissimos, expedita, repudiandae. Amet, fuga itaque?</p>
+            <div class="row mt-5">
+                <div class="col text-center"><img height="64px" src="https://avatars.githubusercontent.com/u/63014604?s=200&v=4" alt="Logo Metrotech DIgital Asia"></div>
+                <div class="col text-center"><img height="64px" src="https://www.pikpng.com/pngl/b/56-566268_logo-telkom-school-png-graphics-clipart.png" alt="Logo Telkom Schools Makassar"></div>
+                <div class="col text-center"><img height="64px" src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Logo_Yayasan_Pendidikan_Telkom.png" alt="Logo Logo_Yayasan_Pendidikan_Telkom"></div>
             </div>
         </div>
-    </div>
-    <!-- AKhir Tentang kami About us -->
-
-    <!-- Footer Kontak Bagian bawah -->
-    <div class="container-fluid bg-danger pt-5 px-4">
-        <div class="row">
-            <div class="col col-lg-6">
-                <p class="fs-1 fw-bold text-light ms-4">Kontak Kami</p>
-                <ul class="">
-                    <li class="text-light list-unstyled"><i class="bi bi-geo-alt"></i> <a class="text-decoration-none text-light" target="_blank" href="https://www.google.com/maps/place/SMK+TELKOM+Makassar/@-5.1708206,119.4352354,19z/data=!4m13!1m7!3m6!1s0x2dbee28e2c2fa91b:0x83021032aa03ac5d!2sJl.+A.+P.+Pettarani+No.4,+Mannuruki,+Kec.+Tamalate,+Kota+Makassar,+Sulawesi+Selatan+90221,+Indonesia!3b1!8m2!3d-5.1698322!4d119.4327597!3m4!1s0x2dbee32da1a075d3:0x88e9cc6030cfa1dd!8m2!3d-5.1712763!4d119.4363863">Jl. A. P. Pettarani No.4, Gn. Sari, Kec. Rappocini, Kota Makassar, Sulawesi Selatan 90221, Indonesia</a></li>
-                    <li class="text-light list-unstyled"><i class="bi bi-telephone"></i> <a class="text-decoration-none text-light" target="_blank" href="https://api.whatsapp.com/send/?phone=6282193895552&text&app_absent=0">+6282193895552</a></li>
-                    <li class="text-light list-unstyled"><i class="bi bi-envelope"></i> <a class="text-decoration-none text-light" target="_blank" href="mailto:haysnairfailfar@gmail.com"> haysnairfailfar@gmail.com</a></li>
-                </ul>
-            </div>
-            <div class="col col-lg-6">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-auto"><img height="50px" src="" alt="Logo KaSeT"></div>
-                        <div class="col-auto"><img height="50px" src="https://avatars.githubusercontent.com/u/63014604?s=200&v=4" alt="Logo Metrotech DIgital Asia"></div>
-                        <div class="col-auto"><img height="50px" src="https://www.pikpng.com/pngl/b/56-566268_logo-telkom-school-png-graphics-clipart.png" alt="Logo Telkom Schools Makassar"></div>
-                        <div class="col-auto"><img height="50px" src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Logo_Yayasan_Pendidikan_Telkom.png" alt="Logo Logo_Yayasan_Pendidikan_Telkom"></div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-12">
-                            <p class="fw-bold fs-2 text-light">Follow IG Kami Di</p>
-                        </div>
-                        <div class="col">
-                            <form action="https://www.instagram.com/" target="_blank">
-                                <button type="submit" class="btn btn-light text-dark py-1 px-3"><i class="bi bi-instagram"></i> lorem</button>
-                            </form>
+        <!-- Akhir Didukung oleh Supported by -->
+        <!-- Footer Kontak Bagian bawah -->
+        <div class="container-fluid bg-danger pt-5 px-4">
+            <div class="row">
+                <div class="col col-lg-6">
+                    <p class="fs-1 fw-bold text-light ms-4">Kontak Kami</p>
+                    <ul class="">
+                        <li class="text-light list-unstyled"><i class="bi bi-geo-alt"></i> <a class="text-decoration-none text-light" target="_blank" href="https://www.google.com/maps/place/SMK+TELKOM+Makassar/@-5.1708206,119.4352354,19z/data=!4m13!1m7!3m6!1s0x2dbee28e2c2fa91b:0x83021032aa03ac5d!2sJl.+A.+P.+Pettarani+No.4,+Mannuruki,+Kec.+Tamalate,+Kota+Makassar,+Sulawesi+Selatan+90221,+Indonesia!3b1!8m2!3d-5.1698322!4d119.4327597!3m4!1s0x2dbee32da1a075d3:0x88e9cc6030cfa1dd!8m2!3d-5.1712763!4d119.4363863">Jl. A. P. Pettarani No.4, Gn. Sari, Kec. Rappocini, Kota Makassar, Sulawesi Selatan 90221, Indonesia</a></li>
+                        <li class="text-light list-unstyled"><i class="bi bi-telephone"></i> <a class="text-decoration-none text-light" target="_blank" href="https://api.whatsapp.com/send/?phone=6282193895552&text&app_absent=0">+6282193895552</a></li>
+                        <li class="text-light list-unstyled"><i class="bi bi-envelope"></i> <a class="text-decoration-none text-light" target="_blank" href="mailto:haysnairfailfar@gmail.com"> haysnairfailfar@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="col col-lg-6">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="fw-bold fs-1 text-light">Follow IG Kami Di</p>
+                            </div>
+                            <div class="col">
+                                <form action="https://www.instagram.com/" target="_blank">
+                                    <button type="submit" class="btn btn-light text-dark py-1 px-3"><i class="bi bi-instagram"></i> lorem</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col text-center">
-                <p class="text-light">&copy; 2022, MetroChild | <a class="text-decoration-none text-light fw-bold" href="#">Kantin Sekolah Telkom</a></p>
+            <div class="row mt-3">
+                <div class="col text-center">
+                    <p class="text-light">&copy; 2022, MetroChild | <a class="text-decoration-none text-light fw-bold" href="#">Kantin Sekolah Telkom</a></p>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Akhir Footer Kontak Bagian bawah -->
-
+        <!-- Akhir Footer Kontak Bagian bawah -->
+    @endauth
+    
     <!-- jQuery Bootstrap Popper Scrollspy -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>

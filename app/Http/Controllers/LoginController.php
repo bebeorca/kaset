@@ -20,12 +20,27 @@ class LoginController extends Controller
         ]);
 
         if(Auth::attempt($credentials)){
+
             $request->session()->regenerate();
-            return redirect()->intended('/');
+
+            if(Auth::user()->user_id === 1){
+                return redirect()->intended('/dashboard');
+            }elseif(Auth::user()->user_id === 2){
+                return redirect()->intended('/dashboard');
+            }
+            
         }
 
         return back()->with('loginError', "Login gagal, coba lagi!");
 
+    }
+
+    protected function authenticated(){
+        if(Auth::user()->user_id === '2'){
+            return redirect('/dashboard');
+        }elseif(Auth::user()->user_id === 0){
+            return redirect('/');
+        }
     }
 
     public function updateProfile(){
