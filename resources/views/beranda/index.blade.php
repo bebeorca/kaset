@@ -21,7 +21,7 @@
 @endif
 
 
-<div class="row gy-5">
+<div class="row gy-4">
     @foreach ($menus as $menu)
 
         <div class="col-12 col-md-6 col-lg-4">

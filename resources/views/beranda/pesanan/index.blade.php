@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    @if ($menus->count() == 0)
+        <meta http-equiv="refresh" content="45">    
+    @endif
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/img/logo_kaset.ico">
     <style>
         @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
         body {
@@ -19,14 +23,18 @@
             border: none;
         }
 
+        .kuantitas:focus {
+            outline: 3px solid lightblue;
+            border-radius: 10px;
+        }
     </style>
     <title>Pesanan</title>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-danger">
+  {{-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-danger">
     <div class="container-fluid px-5">
         <a class="navbar-brand" href="/">
-            <img width="128" src="/img/hitam.png" alt="Logo KaSeT">
+            <img width="128" src="/img/putih.png" alt="Logo KaSeT">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -36,30 +44,38 @@
                 <li class="nav-item me-5">
                     <a class="nav-link active" aria-current="page" href="/">Beranda</a>
                 </li>
+                <li class="nav-item me-5">
+                    <a class="nav-link active" aria-current="page" href="/menus">Menu</a>
+                </li>
             </ul>
         </div>
     </div>
-  </nav>
+  </nav> --}}
 
-    <div class="container" style="margin-top: 100px">
+    <div class="container py-5">
+        <div class="row justify-content-between">
+            <div class="col-auto">
+                <a href="/#beranda" class="text-decoration-none fs-2 link-danger fw-bold"><i class="bi bi-arrow-bar-left text-dark"></i> Kembali</a>
+            </div>
+            <div class="col-auto">
+                <a href="/menus" class="text-decoration-none fs-2 link-danger fw-bold"><i class="bi bi-shop text-dark"></i> Menu</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
         @if(session()->has('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('success') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
             </div>
         @elseif(session()->has('limit'))
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 {{ session('limit') }}
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
             </div>
         @endif
     </div>
 
-    <div class="container mb-5" style="margin-top: 100px;">
+    <div class="container mb-5">
         <div class="row gy-4">
             @foreach ($menus as $menu)
             <div class="col-lg-4 col-md-6 col-12">
@@ -80,7 +96,7 @@
                             <div class="d-flex justify-content-between mt-4">
                                 <div>
                                     <label for="kuantitas">Porsi:</label> 
-                                    <input type="number" name="kuantitas" id="kuantitas" value="1" class="kuantitas" min="1" autofocus onchange="changeValue()" style="width: 40px; height: 25px">
+                                    <input type="number" name="kuantitas" id="kuantitas" value="1" class="kuantitas" min="1" autofocus onchange="changeValue()" style="border: 1px double rgb(224, 223, 223); border-radius: 5px; width: 50px; height: 25px">
                                 </div>
                                 
                                 <input type="text" name="harga" id="harga" class="h5 text-dark" style="outline:none; border:0;width:60px" dir="rtl" value="{{ $menu->harga / 1000 . "K" }}" readonly>
@@ -99,7 +115,7 @@
                         <input type="hidden" name="kantin_id" value="{{ $menu->kantin_id }}">
                         <input type="hidden" name="status" value="0">
 
-                        <button type="submit" class="btn btn-success w-100">Konfirmasi</button>
+                        <button type="submit" class="btn btn-success w-100" onclick="return confirm('Konfirmasi pesanan?')">Konfirmasi</button>
                     </form>
                             </div>
                             <div class="col order-0">

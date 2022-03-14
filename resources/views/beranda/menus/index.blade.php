@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <title>KaSeT | Menu</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="/img/logo_kaset.ico">
     <style>
         @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -19,7 +20,7 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-auto">
-                <a href="/#menu" class="text-decoration-none fs-2 link-danger fw-bold"><i class="bi bi-arrow-bar-left text-dark"></i> Kembali</a>
+                <a href="/" class="text-decoration-none fs-2 link-danger fw-bold"><i class="bi bi-arrow-bar-left text-dark"></i> Kembali</a>
             </div>
         </div>
         <div class="row gx-0 justify-content-center mt-4 mb-5">
@@ -30,7 +31,7 @@
         </div>
         <div class="row">
             @foreach ($menus as $menu)
-                <div class="col-12 col-md-6 col-lg-4 mb-5">
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
                     <div class="card" style="border-radius: 20px;">
                         <p class="text-danger fw-bold fs-5 position-absolute top-0 end-0 me-3 mt-2 bg-light px-2" style="z-index: 10; border-radius:50px">{{ $menu->harga / 1000 . 'K' }}</p>
                         @if ($menu->gambar)

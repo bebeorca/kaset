@@ -156,35 +156,66 @@ Route::get('/snack', function (){
 
 //semua menu
 Route::get('/menus', function (){
-    return view('beranda/menus/index', [
-        "act" => "semua",
-        "menus" => Menus::paginate(12),
-        "itemPesanan" => Pesanan::where("user_id", auth()->user()->id)->get()
-    ]);
+    if(Auth::check()){
+        return view('beranda/menus/index', [
+            "act" => "semua",
+            "menus" => Menus::paginate(12),
+            "itemPesanan" => Pesanan::where("user_id", auth()->user()->id)->get()
+        ]);
+    }else{
+        return view('beranda/menus/index', [
+            "act" => "semua",
+            "menus" => Menus::paginate(12)
+        ]);
+    }
+    
 });
 
 Route::get('/menus/makanan', function (){
-    return view('beranda/menus/index', [
-        "act" => "makanan",
-        "menus" => Menus::where('kategori', 1)->paginate(12),
-        "itemPesanan" => Pesanan::where("user_id", auth()->user()->id)->get()
-    ]);
+    if(Auth::check()){
+        return view('beranda/menus/index', [
+            "act" => "makanan",
+            "menus" => Menus::where('kategori', 1)->paginate(12),
+            "itemPesanan" => Pesanan::where("user_id", auth()->user()->id)->get()
+        ]);
+    }else{
+        return view('beranda/menus/index', [
+            "act" => "makanan",
+            "menus" => Menus::where('kategori', 1)->paginate(12)
+        ]);
+    }
+    
 });
 
 Route::get('/menus/minuman', function (){
-    return view('beranda/menus/index', [
-        "act" => "minuman",
-        "menus" => Menus::where('kategori', 2)->paginate(12),
-        "itemPesanan" => Pesanan::where("user_id", auth()->user()->id)->get()
-    ]);
+    if(Auth::check()){
+        return view('beranda/menus/index', [
+            "act" => "minuman",
+            "menus" => Menus::where('kategori', 2)->paginate(12),
+            "itemPesanan" => Pesanan::where("user_id", auth()->user()->id)->get()
+        ]);
+    }else{
+        return view('beranda/menus/index', [
+            "act" => "minuman",
+            "menus" => Menus::where('kategori', 2)->paginate(12)
+        ]);
+    }
+    
 });
 
 Route::get('/menus/snack', function (){
-    return view('beranda/menus/index', [
-        "act" => "snack",
-        "menus" => Menus::where('kategori', 3)->paginate(12),
-        "itemPesanan" => Pesanan::where("user_id", auth()->user()->id)->get()
-    ]);
+    if(Auth::check()){
+        return view('beranda/menus/index', [
+            "act" => "snack",
+            "menus" => Menus::where('kategori', 3)->paginate(12),
+            "itemPesanan" => Pesanan::where("user_id", auth()->user()->id)->get()
+        ]);
+    }else{
+        return view('beranda/menus/index', [
+            "act" => "snack",
+            "menus" => Menus::where('kategori', 3)->paginate(12)
+        ]);
+    }
 });
 //end semua menu
 

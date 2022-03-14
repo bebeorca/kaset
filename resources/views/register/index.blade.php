@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KaSeT | {{ $title }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="/img/logo_kaset.ico">
     <style>
         @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -113,7 +114,7 @@
                      @enderror
                  </div>
                  <div class="col">
-                     <label for="nomor_telepon" class="form-label">Nomor Telepon <sup><i class="bi bi-asterisk text-danger"></i></sup></label>
+                     <label for="nomor_telepon" class="form-label">Telepon <sup><i class="bi bi-asterisk text-danger"></i></sup></label>
                      <input required type="tel" class="form-control @error('nomor_telepon') is-invalid @enderror" name="nomor_telepon" id="nomor_telepon" placeholder="Nomor Telepon" value="{{ old('nomor_telepon') }}">
                      @error('nomor_telepon')
                         <div class="invalid-feedback">
@@ -136,7 +137,7 @@
                     @enderror
                 </div>
                  <div class="w-100"></div>
-                 <div class="col">
+                 <div class="col align-self-end">
                     <label for="password" class="form-label">Kata Sandi <sup><i class="bi bi-asterisk text-danger"></i></sup></label>
                     <input required type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" placeholder="Kata Sandi">
                     @error('password')
@@ -145,7 +146,7 @@
                         </div>
                     @enderror
                 </div>
-                <div class="col">
+                <div class="col align-self-end">
                     <label for="konfirmasi_password" class="form-label">Konfirmasi Kata Sandi <sup><i class="bi bi-asterisk text-danger"></i></sup></label>
                     <input required type="password" class="form-control @error('konfirmasi_password') is-invalid @enderror" id="konfirmasi_password" name="konfirmasi_password" placeholder="Konfirmasi Kata Sandi">
                     @error('konfirmasi_password')

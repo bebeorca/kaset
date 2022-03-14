@@ -13,7 +13,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Beranda</a>
                     </li>
                     <li class="nav-item me-5">
-                        <a class="nav-link active" aria-current="page" href="#menu">Menu</a>
+                        <a class="nav-link active" aria-current="page" href="/menus">Menu</a>
                     </li>
                     
                     @auth
@@ -88,7 +88,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Beranda</a>
                     </li>
                     <li class="nav-item me-5">
-                        <a class="nav-link active" aria-current="page" href="#menu">Menu</a>
+                        <a class="nav-link active" aria-current="page" href="/menus">Menu</a>
                     </li>
                     <li class="nav-item me-5">
                         <a class="nav-link active" aria-current="page" href="#tentang_kami">Tentang Kami</a>
